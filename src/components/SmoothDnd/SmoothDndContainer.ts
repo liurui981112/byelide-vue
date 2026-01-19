@@ -1,7 +1,7 @@
 import type { SmoothDnD } from 'smooth-dnd'
 import { dropHandlers, smoothDnD } from 'smooth-dnd'
 import { defineComponent, h, onMounted, ref, onUnmounted } from 'vue'
-import { getTagProps, validateTagProp } from '../SmoothDnd/tagUtils'
+import { getTagProps, validateTagProp } from './tagUtils'
 
 smoothDnD.dropHandler = dropHandlers.reactDropHandler().handler
 smoothDnD.wrapChild = false
@@ -61,7 +61,7 @@ export const SmoothDndContainer = defineComponent({
           emit(eventKey, props)
         }
       }
-      console.log('传递给smoothDnD函数的options', options)
+      // console.log('传递给smoothDnD函数的options', options)
       // 初始化 Smooth DnD 容器
       container.value = smoothDnD(containerRef.value, options)
     })
@@ -78,6 +78,6 @@ export const SmoothDndContainer = defineComponent({
 
     const tagProps = getTagProps(props.tag)
     // 渲染函数
-    return h(tagProps.value, { ...tagProps.props, ref: containerRef }, slots.default?.())
+    return () => h(tagProps.value, { ...tagProps.props, ref: containerRef }, slots.default?.())
   },
 })
