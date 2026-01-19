@@ -23,8 +23,7 @@ import { useAppEditorStore } from '@/stores/appEditor'
 import { blocksBaseMeta } from '@/constants/blocksBaseMeta'
 import { storeToRefs } from 'pinia'
 const { blocks } = storeToRefs(useAppEditorStore())
-
-console.log(blocks)
+console.log('🚀 ~ pinia同步更新给大纲组件的blocks:', blocks)
 </script>
 
 <style scoped>

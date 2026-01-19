@@ -29,7 +29,7 @@ const router = createRouter({
     // 根路径 重定向
     {
       path: '/',
-      redirect: '/app',
+      redirect: '/app/layout',
     },
     // 404 匹配
     {

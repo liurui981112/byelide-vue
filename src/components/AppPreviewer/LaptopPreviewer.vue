@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import BlocksRenderer from '@/blocks/BlocksRenderer.vue'
+import BlocksRenderer from '@/blocks/BlocksRenderer.vue'
 </script>
 
 <template>

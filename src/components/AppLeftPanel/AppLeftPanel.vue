@@ -42,11 +42,9 @@ const isDrawerShown = ref<DrawerMode>('outline')
 function toggleDrawer(drawerMode: DrawerMode = null) {
   if (isDrawerShown.value === drawerMode) {
     isDrawerShown.value = null
-    console.log('null', isDrawerShown.value)
     return
   }
   isDrawerShown.value = drawerMode
-  console.log('抽屉的值', isDrawerShown.value)
 }
 </script>
 
